@@ -8,16 +8,9 @@ export function Button({
   className = "",
   ...props
 }: ButtonProps) {
-  const base = "btn";
-  const variants = {
-    primary:
-      "bg-primary text-white hover:bg-secondary dark:bg-secondary dark:hover:bg-primary",
-    secondary:
-      "bg-secondary text-white hover:bg-primary dark:bg-primary dark:hover:bg-secondary",
-  };
-
+  // Modern, sleek style handled by .btn in index.css
   return (
-    <button className={`${base} ${variants[variant]} ${className}`} {...props}>
+    <button className={`btn ${className}`} {...props}>
       {children}
     </button>
   );

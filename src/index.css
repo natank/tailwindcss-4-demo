@@ -1,34 +1,86 @@
 @import "tailwindcss";
 
-/* Define theme tokens */
+/* Theme variables: adds utilities like bg-primary, text-secondary, mt-3, font-heading, etc. */
 @theme {
-  /* Colors */
-  --color-primary: #3b82f6;
-  --color-secondary: #10b981;
-  --color-muted-light: #f3f4f6;
-  --color-muted-dark: #1f2937;
+  /* Sleek tech palette */
+  --color-primary: #2563eb; /* blue-600 */
+  --color-on-primary: #f8fafc;
+  --color-secondary: #334155; /* slate-700 */
+  --color-on-secondary: #f8fafc;
+  --color-success: #22d3ee; /* cyan-400 */
+  --color-on-success: #0f172a;
+  --color-warning: #fbbf24; /* amber-400 */
+  --color-on-warning: #0f172a;
+  --color-info: #64748b; /* muted blue-gray */
+  --color-on-info: #f1f5f9;
+  --color-badge-muted: #e2e8f0; /* muted badge bg */
+  --color-badge-text: #334155;
+  --color-card-bg: #1e293b; /* deep gray */
+  --color-card-bg-dark: #0f172a;
+  --color-bg: #0a192f; /* global bg */
+  --color-text: #e0e7ef;
 
-  /* Font */
-  --font-sans: "Inter", sans-serif;
-
-  /* Spacing scale */
-  --spacing-4: 1rem;
-  --spacing-8: 2rem;
+  --spacing-1: 0.35rem;
+  --spacing-2: 0.8rem;
+  --font-heading: "Poppins, Inter, sans-serif";
+  --font-body: "Inter, sans-serif";
+  --breakpoint-lg: 64rem;
 }
 
-/* Use CSS variables if needed for non-utility areas */
-:root {
-  font-family: var(--font-sans);
-}
-
-/* Optional component style layer */
+/* Optional shared components */
 @layer components {
   .btn {
-    @apply rounded bg-primary px-[var(--spacing-4)] py-2 font-sans text-white transition hover:bg-secondary dark:bg-secondary dark:text-white dark:hover:bg-primary;
+    @apply rounded-xl font-body px-5 py-2.5 text-white shadow-md bg-primary transition-all duration-200 hover:bg-secondary hover:text-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/30;
+    box-shadow: 0 2px 8px 0 rgba(36, 58, 115, 0.08);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-lg px-2 py-0.5 text-xs font-medium shadow-sm;
+    background-color: var(--color-badge-muted);
+    color: var(--color-badge-text);
+    padding: 0.15rem 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    opacity: 0.88;
+  }
+
+  .badge-info {
+    background-color: var(--color-info);
+    color: var(--color-on-info);
+  }
+
+  .badge-success {
+    background-color: var(--color-success);
+    color: var(--color-on-success);
+  }
+
+  .badge-warning {
+    background-color: var(--color-warning);
+    color: var(--color-on-warning);
   }
 
   .card {
-    @apply rounded-lg bg-muted-light p-[var(--spacing-8)] text-gray-900 shadow-lg dark:bg-muted-dark dark:text-white;
-    font-family: var(--font-sans);
+    @apply rounded-2xl shadow-lg p-6;
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    box-shadow: 0 4px 32px 0 rgba(36, 58, 115, 0.08);
   }
 }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+}
+
+html {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+

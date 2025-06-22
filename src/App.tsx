@@ -1,33 +1,30 @@
-import { useState } from "react";
+import { Badge } from "./components/Badge";
 import { Button } from "./components/Button";
 import { Card } from "./components/Card";
 
-export default function App() {
-  const [dark, setDark] = useState(false);
-
+export function App() {
   return (
-    <div
-      className={
-        dark
-          ? "dark min-h-screen bg-gray-900 text-white"
-          : "min-h-screen bg-gray-100 text-gray-900"
-      }
-    >
-      <div className="container mx-auto flex flex-col items-center gap-[var(--spacing-4)] p-[var(--spacing-8)] font-sans">
-        <Button onClick={() => setDark(!dark)}>
-          Toggle {dark ? "Light" : "Dark"} Mode
-        </Button>
+    <div className="min-h-screen bg-secondary p-4 font-body">
+      <header className="mb-6 font-heading text-3xl text-on-secondary">
+        Welcome to Tailwind 4 Demo
+      </header>
 
-        <Card>
-          <h2 className="mb-[var(--spacing-4)] text-2xl font-bold">
-            Hello, Tailwind CSS 4!
-          </h2>
-          <p className="mb-[var(--spacing-4)]">
-            This is a reusable card using tokens and theming.
-          </p>
-          <Button variant="secondary">Action Button</Button>
-        </Card>
-      </div>
+      <Button className="mb-6">Primary Button</Button>
+
+      <Card>
+        {" "}
+        <h2 className="mb-2 font-heading text-2xl">Card Title</h2>
+        <p className="font-body">
+          This is a demo card styled using Tailwind CSS 4.0 utilities.
+        </p>
+        <div className="space-x-2">
+          <Badge label="Info" variant="info" />
+          <Badge label="Success" variant="success" />
+          <Badge label="Warning" variant="warning" />
+        </div>
+      </Card>
     </div>
   );
 }
+
+export default App;
