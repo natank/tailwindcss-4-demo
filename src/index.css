@@ -24,7 +24,7 @@
 /* Optional component style layer */
 @layer components {
   .btn {
-    @apply rounded bg-primary px-[var(--spacing-4)] py-2 font-sans text-white transition hover:bg-secondary;
+    @apply rounded bg-primary px-[var(--spacing-4)] py-2 font-sans text-white transition hover:bg-secondary dark:bg-secondary dark:text-white dark:hover:bg-primary;
   }
 
   .card {
