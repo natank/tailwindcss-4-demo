@@ -9,7 +9,7 @@ type FilterBarProps = {
 
 export default function FilterBar({ tags, activeTag, onTagClick }: FilterBarProps) {
   return (
-    <div className="flex gap-2 py-2">
+    <div className="w-full flex flex-wrap justify-center gap-3 py-3 mb-2 border-b border-surface/30">
       {tags.map((tag) => (
         <FilterTag key={tag} label={tag} active={activeTag === tag} onClick={() => onTagClick(tag)} />
       ))}

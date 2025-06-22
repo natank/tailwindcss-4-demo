@@ -4,9 +4,9 @@ export default function BackButton({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="text-sm text-primary underline hover:text-primary/80 mb-4 focus:outline-none focus:ring-2 focus:ring-primary/40"
+      className="flex items-center gap-1 text-sm font-medium text-primary hover:text-accent transition-colors mb-5 focus:outline-none focus:ring-2 focus:ring-primary/30 px-2 py-1 rounded-lg"
     >
-      ← Back
+      <span className="text-lg">←</span> Back
     </button>
   );
 }

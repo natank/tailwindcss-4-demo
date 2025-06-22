@@ -12,8 +12,11 @@ export default function FilterTag({ label, active, onClick }: FilterTagProps) {
     <button
       type="button"
       onClick={onClick}
-      className={`inline-block px-2 py-0.5 rounded-md text-sm font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary/40
-        ${active ? "bg-accent text-black" : "bg-surface text-muted hover:bg-accent/60"}`}
+      className={`px-3 py-1 rounded-full text-sm font-medium border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm 
+        ${active 
+          ? "bg-primary text-white border-primary scale-105" 
+          : "bg-surface text-muted border-surface hover:bg-primary hover:text-white focus:bg-primary focus:text-white"}
+      `}
       aria-pressed={active}
     >
       #{label}
