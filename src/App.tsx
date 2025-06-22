@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Button } from "./components/Button";
+import { Card } from "./components/Card";
 
 export default function App() {
   const [dark, setDark] = useState(false);
@@ -12,19 +14,19 @@ export default function App() {
       }
     >
       <div className="container mx-auto flex flex-col items-center gap-[var(--spacing-4)] p-[var(--spacing-8)] font-sans">
-        <button onClick={() => setDark(!dark)} className="btn">
+        <Button onClick={() => setDark(!dark)}>
           Toggle {dark ? "Light" : "Dark"} Mode
-        </button>
+        </Button>
 
-        <div className="card">
+        <Card>
           <h2 className="mb-[var(--spacing-4)] text-2xl font-bold">
             Hello, Tailwind CSS 4!
           </h2>
           <p className="mb-[var(--spacing-4)]">
-            This is a simple card demonstrating design tokens in action.
+            This is a reusable card using tokens and theming.
           </p>
-          <button className="btn">Action Button</button>
-        </div>
+          <Button variant="secondary">Action Button</Button>
+        </Card>
       </div>
     </div>
   );
